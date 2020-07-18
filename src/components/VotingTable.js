@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 
-const VotingTable = () => {
+import Flavor from "./Flavor";
+
+const VotingTable = ({ flavors }) => {
+  const flavorsRender = (arr) => arr.map((item) => <Flavor flavor={item} />);
+
   return (
-    <div>
-      <p>Goodbye World</p>
-    </div>
+    <>
+      <table className="ui celled table">
+        <thead>
+          <tr>
+            <th>Flavor</th>
+            <th>Tally</th>
+            <th>Vote!</th>
+          </tr>
+          {flavorsRender(flavors)}
+        </thead>
+        <tbody></tbody>
+      </table>
+    </>
   );
 };
 
