@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import axios from "../axios";
+
 const Mixins = () => {
   // Ah CRUD, we gonna crud this shit up. Make this a whole crud to do list where you can add, edit
   // and delete things you'd like in your ice cream. Hook it up with JSON Server.
@@ -10,6 +12,13 @@ const Mixins = () => {
   // do that. W/ the other one, try some simple transition animation. How do I do that?
   // And set it up so you click an icon for e/ thing (ie chocolate, cookie dough, etc);
   const [input, setInput] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const result = { mixin: input };
+    axios.post("/mixins", result);
+    setInput("");
+  };
 
   return (
     <div>
@@ -28,8 +37,10 @@ const Mixins = () => {
       </div>
       <div className="ui container">
         <br />
-        <input value={input} onChange={(e) => setInput(e.target.value)} />
-        <button className="ui button primary">Add</button>
+        <form className="ui form" onSubmit={(e) => onSubmit(e)}>
+          <input value={input} onChange={(e) => setInput(e.target.value)} />
+          <button className="ui button primary">Add</button>
+        </form>
         <br />
         <div>
           <ol className="ui list">
