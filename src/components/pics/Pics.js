@@ -4,6 +4,7 @@ import unsplash from "../../api/unsplash";
 
 const Pics = () => {
   const [pics, setPics] = useState([]);
+  const [spans, setSpans] = useState(0);
 
   const ref = useRef();
 
@@ -17,19 +18,19 @@ const Pics = () => {
     };
     fetchPics();
   }, []);
-  const renderPics = pics.map((pic) => {
-    console.log(pic.urls.regular, pic.description);
-    return (
-      <div>
-        <img ref={ref} alt={pic.description} src={pic.urls.regular} />
-      </div>
-    );
-  });
+  const renderPics = () =>
+    pics.map((pic) => {
+      return (
+        <div key={pic.id}>
+          <img ref={ref} alt={pic.description} src={pic.urls.regular} />
+        </div>
+      );
+    });
 
   return (
     <div>
-      <h1>ICE SCREAM FOR ICE CREAM!</h1>
-      {renderPics}
+      <h1>I SCREAM FOR ICE CREAM!</h1>
+      {renderPics()}
     </div>
   );
 };
