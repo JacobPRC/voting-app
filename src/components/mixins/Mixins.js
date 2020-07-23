@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const Mixins = () => {
   // Ah CRUD, we gonna crud this shit up. Make this a whole crud to do list where you can add, edit
@@ -9,6 +9,7 @@ const Mixins = () => {
   //maybe that one could have the checkout. And this one just adds up the total. Maybe it enev doesn't
   // do that. W/ the other one, try some simple transition animation. How do I do that?
   // And set it up so you click an icon for e/ thing (ie chocolate, cookie dough, etc);
+  const [input, setInput] = useState("");
 
   return (
     <div>
@@ -25,9 +26,10 @@ const Mixins = () => {
           </div>
         </h2>
       </div>
-      <div>
+      <div className="ui container">
         <br />
-        <input />
+        <input value={input} onChange={(e) => setInput(e.target.value)} />
+        <button className="ui button primary">Add</button>
         <br />
         <div>
           <ol className="ui list">
