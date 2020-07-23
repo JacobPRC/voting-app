@@ -12,12 +12,28 @@ const Mixins = () => {
   // do that. W/ the other one, try some simple transition animation. How do I do that?
   // And set it up so you click an icon for e/ thing (ie chocolate, cookie dough, etc);
   const [input, setInput] = useState("");
+  const [items, setItems] = useState([]);
+  const [submissions, setSubmissions] = useState(0);
 
   const onSubmit = (e) => {
     e.preventDefault();
     const result = { mixin: input };
     axios.post("/mixins", result);
     setInput("");
+    const newCount = submissions + 1;
+    setSubmissions(newCount);
+  };
+
+  useEffect(() => {
+    const getMixins = async () => {
+      const response = await axios.get("/mixins");
+      setItems(response.data);
+    };
+    getMixins();
+  }, [submissions]);
+
+  const renderedItems = () => {
+    return items.map((item) => <li>{item.mixin}</li>);
   };
 
   return (
@@ -43,9 +59,7 @@ const Mixins = () => {
         </form>
         <br />
         <div>
-          <ol className="ui list">
-            <li>Something</li>
-          </ol>
+          <ol className="ui list">{renderedItems()}</ol>
         </div>
       </div>
     </div>

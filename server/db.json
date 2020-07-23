@@ -2,15 +2,63 @@
   "mixins": [
     {
       "mixin": "apples",
-      "id": 1
-    },
-    {
-      "mixin": "apples",
-      "id": 2
-    },
-    {
-      "mixin": "apples",
       "id": 3
+    },
+    {
+      "mixin": "Dingleberry x3",
+      "id": 4
+    },
+    {
+      "mixin": "Fraggleberry ",
+      "id": 6
+    },
+    {
+      "mixin": "pussy",
+      "id": 7
+    },
+    {
+      "mixin": "pickles",
+      "id": 8
+    },
+    {
+      "mixin": "popcorn",
+      "id": 9
+    },
+    {
+      "mixin": "pop",
+      "id": 10
+    },
+    {
+      "mixin": "mix",
+      "id": 11
+    },
+    {
+      "mixin": "in",
+      "id": 12
+    },
+    {
+      "mixin": "app",
+      "id": 13
+    },
+    {
+      "mixin": "chicken",
+      "id": 14
+    },
+    {
+      "mixin": "mexicans",
+      "id": 15
+    },
+    {
+      "mixin": "chii",
+      "id": 16
+    },
+    {
+      "mixin": "apple",
+      "id": 17
+    },
+    {
+      "mixin": "last try",
+      "id": 18
     }
   ]
 }
