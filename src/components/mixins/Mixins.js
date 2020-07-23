@@ -12,7 +12,8 @@ const Mixins = () => {
 
   return (
     <div>
-      <div>
+      <br />
+      <div className="ui two columned centered grid">
         <h2 class="ui icon header">
           <i class="cart plus icon"></i>
           <div class="content">
@@ -24,13 +25,15 @@ const Mixins = () => {
           </div>
         </h2>
       </div>
-      <br />
-      <input />
-      <br />
       <div>
-        <ol className="ui list">
-          <li>Something</li>
-        </ol>
+        <br />
+        <input />
+        <br />
+        <div>
+          <ol className="ui list">
+            <li>Something</li>
+          </ol>
+        </div>
       </div>
     </div>
   );
