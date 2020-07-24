@@ -17,11 +17,11 @@ const Mixins = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    const newCount = submissions + 1;
+    setSubmissions(newCount);
     const result = { mixin: input };
     axios.post("/mixins", result);
     setInput("");
-    const newCount = submissions + 1;
-    setSubmissions(newCount);
   };
 
   useEffect(() => {
@@ -30,12 +30,19 @@ const Mixins = () => {
       setItems(response.data);
     };
     getMixins();
-  }, [submissions]);
+  }, [input]);
 
   const renderedItems = () => {
-    return items.map((item) => <li>{item.mixin}</li>);
+    return items.map((item) => {
+      return (
+        <>
+          <li key={item.id}>{item.mixin}</li>
+          <i className="delete icon"></i>
+          <i className="edit icon"></i>
+        </>
+      );
+    });
   };
-
   return (
     <div>
       <br />
