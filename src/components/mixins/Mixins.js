@@ -39,6 +39,12 @@ const Mixins = () => {
         <>
           <li key={item.id}>{item.mixin}</li>
           <i className="delete icon"></i>
+          {/* //need to pass item.mixin to link and use it as initial input state
+          //  to={{ */}
+          {/* //   pathname: "/login",
+  //   search: "?utm=your+face",
+  //   state: { referrer: currentLocation }
+  // }} */}
           <Link to={`mixins/edit/${item.id}`}>
             <i className="edit icon"></i>
           </Link>
