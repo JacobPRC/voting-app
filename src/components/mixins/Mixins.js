@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import axios from "../axios";
+import Link from "../Link";
 
 const Mixins = () => {
   // Ah CRUD, we gonna crud this shit up. Make this a whole crud to do list where you can add, edit
@@ -38,7 +39,9 @@ const Mixins = () => {
         <>
           <li key={item.id}>{item.mixin}</li>
           <i className="delete icon"></i>
-          <i className="edit icon"></i>
+          <Link to={`mixins/edit/${item.id}`}>
+            <i className="edit icon"></i>
+          </Link>
         </>
       );
     });

@@ -2,7 +2,18 @@ import React, { useState } from "react";
 
 import Flavor from "./Flavor";
 
-const VotingTable = ({ flavors }) => {
+const flavors = [
+  "Vanilla",
+  "Chocolate",
+  "Durian",
+  "Cheese",
+  "Basil",
+  "Blackberry",
+  "Something with a shit ton of candy",
+  "Other",
+];
+
+const VotingTable = () => {
   const flavorsRender = (arr) => arr.map((item) => <Flavor flavor={item} />);
 
   return (

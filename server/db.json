@@ -1,11 +1,11 @@
 {
   "mixins": [
     {
-      "mixin": "apples",
+      "mixin": "bananas",
       "id": 3
     },
     {
-      "mixin": "Dingleberry x3",
+      "mixin": "dingleberries",
       "id": 4
     },
     {

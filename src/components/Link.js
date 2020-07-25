@@ -5,13 +5,14 @@ const Link = ({ to, className, children, id }) => {
     if (e.metaKey || e.ctrlKey) {
       return;
     }
+
     e.preventDefault();
     window.history.pushState({}, "", to);
     const navEvent = new PopStateEvent("popstate");
     window.dispatchEvent(navEvent);
   };
   return (
-    <a onClick={onClick} className={className} href={to}>
+    <a onClick={onClick} id={id} className={className} href={to}>
       {children}
     </a>
   );
