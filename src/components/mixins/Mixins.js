@@ -15,6 +15,7 @@ const Mixins = () => {
   const [input, setInput] = useState("");
   const [items, setItems] = useState([]);
   const [submissions, setSubmissions] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -30,14 +31,26 @@ const Mixins = () => {
       const response = await axios.get("/mixins");
       setItems(response.data);
     };
-    getMixins();
+    const timeoutId = setTimeout(() => {
+      if (input) {
+        getMixins();
+      }
+    }, 500);
+    if (!input) {
+      getMixins();
+    }
+    return () => clearTimeout(timeoutId);
   }, [input]);
+
+  //items.length * 2?
+
+  useEffect(() => setTotal(items.length * 2), [items]);
 
   const renderedItems = () => {
     return items.map((item) => {
       return (
         <>
-          <li key={item.id}>{item.mixin}</li>
+          <li key={item.id}>{item.mixin} - $2</li>
           <Link to={`mixins/delete/${item.id}`}>
             <i className="delete icon"></i>
           </Link>
@@ -63,6 +76,8 @@ const Mixins = () => {
           </div>
         </h2>
       </div>
+      <br />
+      <h3>Total: ${total}</h3>
       <div className="ui container">
         <br />
         <form className="ui form" onSubmit={(e) => onSubmit(e)}>
