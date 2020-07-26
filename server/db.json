@@ -1,11 +1,11 @@
 {
   "mixins": [
     {
-      "mixin": "",
+      "mixin": "Il Porccino",
       "id": 3
     },
     {
-      "mixin": "dingleberries",
+      "mixin": "Dingleberriez",
       "id": 4
     },
     {
@@ -15,18 +15,6 @@
     {
       "mixin": "the white version of kimchi",
       "id": 12
-    },
-    {
-      "mixin": "Lechon kawali, but like made from cops",
-      "id": 14
-    },
-    {
-      "mixin": "goat",
-      "id": 15
-    },
-    {
-      "mixin": "chicken",
-      "id": 16
     }
   ]
 }

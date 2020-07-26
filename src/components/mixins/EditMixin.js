@@ -8,7 +8,6 @@ const EditMixin = (props) => {
   const [initialInput, setInitialInput] = useState("");
   const { id } = props.match.params;
 
-  //use data to check if id === mixin.id then set input to that or something
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get("/mixins");
@@ -47,7 +46,12 @@ const EditMixin = (props) => {
         <form className="ui form" onSubmit={(e) => onSubmit(e)}>
           <input onChange={(e) => setInput(e.target.value)} input={input} />
           <button className="ui button primary">Submit</button>
-          <button className="ui button negative">Exit</button>
+          <button
+            onClick={() => props.history.push("/mixins")}
+            className="ui button negative"
+          >
+            Exit
+          </button>
         </form>
       </div>
     </div>
